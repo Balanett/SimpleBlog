@@ -1,0 +1,51 @@
+.header {
+    background-image: url("Heart_Pink_Trans_1.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    padding: 10px;
+    margin-bottom: 30px;
+}
+
+.header-item {
+    color: deeppink;
+    margin-left: 180px;
+}
+
+.title {
+    color: hotpink;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 20px;
+}
+.grid-item {
+    background-color: lightgrey;
+    padding: 0 15px 15px 15px;
+    text-align: justify;
+}
+
+.post-body {
+    margin: 50px;
+}
+
+.comment-section {
+    margin: 100px 50px 30px 50px;
+    color: deeppink;
+    text-decoration: underline;
+}
+
+.comment {
+    margin: 10px 50px;
+}
+
+.comment-author {
+    color: hotpink;
+    padding: 0;
+    margin: 0;
+}
+
+.comment-body {
+    margin: 0;
+}
