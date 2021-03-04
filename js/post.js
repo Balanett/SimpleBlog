@@ -2,9 +2,9 @@
 
 let hash = window.location.hash;
 // kivágni: indexOf "#" splice vagy slice, amelyik return-öl és itt létrehozni a hash-ből kivett id-t
-let postUrl = "https://jsonplaceholder.typicode.com/posts/";
+let postUrl = "http://localhost:3000/posts/";
 postUrl += hash.replace('#', '');
-let commentUrl = "https://jsonplaceholder.typicode.com/comments?postId=";
+let commentUrl = "http://localhost:3000/comments?postId=";
 commentUrl += hash.replace('#', '');
 const body = document.querySelector("body");
 

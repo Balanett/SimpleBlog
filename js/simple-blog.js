@@ -20,7 +20,7 @@ let getPosts = (resource) => {
 
 // csak fetch-eljen és return-öljön:
 // és szétszedni külön fv-be a tömb részt
-getPosts("https://jsonplaceholder.typicode.com/posts")
+getPosts("http://localhost:3000/posts")
     .then(data => {
         const body = document.querySelector("body")
         const gridContainer = document.createElement("div")
