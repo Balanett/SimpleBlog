@@ -19,5 +19,27 @@
       "body": "et iusto sed quo iure\nvoluptatem occaecati omnis eligendi aut ad\nvoluptatem doloribus vel accusantium quis pariatur\nmolestiae porro eius odio et labore et velit aut"
     }
   ],
-  "comments": [ ]
+  "comments": [
+    {
+      "postId": "1",
+      "name": "Code Queen",
+      "email": "anett@anett.hu",
+      "body": "I'm genious.",
+      "id": 1
+    },
+    {
+      "postId": "1",
+      "name": "Super Girl",
+      "email": "anett@anett.hu",
+      "body": "I love sushi.",
+      "id": 2
+    },
+    {
+      "postId": "1",
+      "name": "Hero Man",
+      "email": "anett@anett.hu",
+      "body": "Búúúúú",
+      "id": 3
+    }
+  ]
 }

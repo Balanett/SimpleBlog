@@ -49,3 +49,14 @@
 .comment-body {
     margin: 0;
 }
+
+.addComment-form {
+    position: fixed;
+    bottom: 20px;
+    margin: 100px 50px 30px 50px;
+}
+
+.addComment-title {
+    color: deeppink;
+    text-decoration: underline;
+}

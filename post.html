@@ -8,7 +8,20 @@
 </head>
 <body>
 
+<form class="addComment-form">
+    <h3 class="addComment-title">Add comment - Share your thoughts</h3>
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" placeholder="John Doe" required>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" size="22" placeholder="john@doe.com" required> <br><br>
+
+    <textarea rows="4" cols="50" name="comment" required></textarea> <br><br>
+    <input type="submit" id="submit">
+</form>
+
 <script src="js/post.js"></script>
+<script src="js/comments.js"></script>
 
 </body>
 </html>

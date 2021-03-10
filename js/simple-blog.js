@@ -18,8 +18,7 @@ let getPosts = (resource) => {
 };
 
 
-// csak fetch-eljen és return-öljön:
-// és szétszedni külön fv-be a tömb részt
+// Javítás: a getPosts csak fetch-eljen és return-öljön, a műveletet külön függvénybe tenni
 getPosts("http://localhost:3000/posts")
     .then(data => {
         const body = document.querySelector("body")

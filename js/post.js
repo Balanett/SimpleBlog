@@ -1,7 +1,7 @@
 // Simple Blog Post:
 
+// Javítás: hash-t kivágni
 let hash = window.location.hash;
-// kivágni: indexOf "#" splice vagy slice, amelyik return-öl és itt létrehozni a hash-ből kivett id-t
 let postUrl = "http://localhost:3000/posts/";
 postUrl += hash.replace('#', '');
 let commentUrl = "http://localhost:3000/comments?postId=";
@@ -9,11 +9,11 @@ commentUrl += hash.replace('#', '');
 const body = document.querySelector("body");
 
 
-// nem szükséges ilyen sok DOM, markup-pal egyszerűbb!!
-
+// Javítás: markup-pal megcsinálni
 fetch(postUrl)
     .then(response => response.json())
     .then(data => {
+
         const divItem = document.createElement("div")
         const h1Item = document.createElement("h1")
         const h3Item = document.createElement("h3")
