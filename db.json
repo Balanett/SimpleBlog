@@ -35,11 +35,32 @@
       "id": 2
     },
     {
-      "postId": "1",
-      "name": "Hero Man",
+      "postId": "2",
+      "name": "Pikachu",
       "email": "anett@anett.hu",
-      "body": "Búúúúú",
+      "body": "Pika-Pika-Chuuuu!",
       "id": 3
+    },
+    {
+      "postId": "2",
+      "name": "The Boss",
+      "email": "anett@anett.hu",
+      "body": "You are fired!",
+      "id": 4
+    },
+    {
+      "postId": "1",
+      "name": "Sweety",
+      "email": "anett@anett.hu",
+      "body": "I like gummy sugaaaar!!!",
+      "id": 5
+    },
+    {
+      "postId": "3",
+      "name": "Candy",
+      "email": "anett@anett.hu",
+      "body": "lollypops 4ever!",
+      "id": 6
     }
   ]
 }

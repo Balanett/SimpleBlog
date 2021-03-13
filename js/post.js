@@ -1,63 +1,70 @@
-// Simple Blog Post:
+// Simple Blog Post and show comments:
 
-// Javítás: hash-t kivágni
-let hash = window.location.hash;
+let hash = window.location.hash
 let postUrl = "http://localhost:3000/posts/";
-postUrl += hash.replace('#', '');
 let commentUrl = "http://localhost:3000/comments?postId=";
+
+postUrl += hash.replace('#', '');
 commentUrl += hash.replace('#', '');
 const body = document.querySelector("body");
 
 
-// Javítás: markup-pal megcsinálni
 fetch(postUrl)
     .then(response => response.json())
     .then(data => {
+        const postHeader = document.createElement("div")
+        const postTitle = document.createElement("h1")
+        const postAuthor = document.createElement("h3")
+        const postBody = document.createElement("p")
 
-        const divItem = document.createElement("div")
-        const h1Item = document.createElement("h1")
-        const h3Item = document.createElement("h3")
-        const pItem = document.createElement("p")
+        postHeader.className = "header"
+        postTitle.className = "header-item"
+        postAuthor.className = "header-item"
+        postBody.className = "post-body"
 
-        divItem.className = "header"
-        h1Item.className = "header-item"
-        h3Item.className = "header-item"
-        pItem.className = "post-body"
+        postTitle.innerHTML = data.title
+        postAuthor.innerHTML = "Author: " + data.userId
+        postBody.innerHTML = data.body
 
-        h1Item.innerHTML = data.title
-        h3Item.innerHTML = "Author: " + data.userId
-        pItem.innerHTML = data.body
-
-        divItem.appendChild(h1Item)
-        divItem.appendChild(h3Item)
-        body.appendChild(divItem)
-        body.appendChild(pItem)
+        postHeader.appendChild(postTitle)
+        postHeader.appendChild(postAuthor)
+        body.appendChild(postHeader)
+        body.appendChild(postBody)
 
         return fetch(commentUrl);
+
     })
     .then(response => response.json())
-
     .then(data2 => {
-        const h2Item = document.createElement("h2")
-        h2Item.innerHTML = "Comments"
-        h2Item.className = "comment-section"
-        body.appendChild(h2Item)
+
+        const commentsBox = document.createElement("ol")
+        const commentsMain = document.createElement("h2")
+
+        commentsMain.className = "comment-mainTitle"
+        commentsBox.className = "comment-section"
+
+        commentsMain.innerHTML = "Comments"
+
+        body.appendChild(commentsMain)
+        body.appendChild(commentsBox)
 
         for (let i=0; i<data2.length; i++) {
-            const divItem2 = document.createElement("div")
-            const h3Item2 = document.createElement("h3")
-            const pItem2 = document.createElement("p")
+            const comment = document.createElement("li")
+            const commentAuthor = document.createElement("h3")
+            const commentBody = document.createElement("p")
 
-            divItem2.className = "comment"
-            h3Item2.className = "comment-author"
-            pItem2.className = "comment-body"
+            comment.className = "comment"
+            commentAuthor.className = "comment-author"
+            commentBody.className = "comment-body"
 
-            h3Item2.innerHTML = data2[i].name
-            pItem2.innerHTML = data2[i].body
+            commentAuthor.innerHTML = data2[i].name
+            commentBody.innerHTML = data2[i].body
 
-            divItem2.appendChild(h3Item2)
-            divItem2.appendChild(pItem2)
-            body.appendChild(divItem2)
+            comment.appendChild(commentAuthor)
+            comment.appendChild(commentBody)
+            commentsBox.appendChild(comment)
+
+            commentsBox.insertBefore(comment, commentsBox.childNodes[0])
         }
 
     }).catch(onerror => console.error("Error", onerror));

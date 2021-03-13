@@ -18,38 +18,37 @@ let getPosts = (resource) => {
 };
 
 
-// Javítás: a getPosts csak fetch-eljen és return-öljön, a műveletet külön függvénybe tenni
 getPosts("http://localhost:3000/posts")
     .then(data => {
         const body = document.querySelector("body")
-        const gridContainer = document.createElement("div")
-        gridContainer.className = "grid-container"
-        body.appendChild(gridContainer)
+        const postContainer = document.createElement("div")
+        postContainer.className = "grid-container"
+        body.appendChild(postContainer)
 
         for (let i=0; i<30; i++) {
-            const divItem = document.createElement("div")
-            const h3Item = document.createElement("h3")
-            const pItem = document.createElement("p")
-            const aItem = document.createElement("a")
+            const postCard = document.createElement("div")
+            const postTitle = document.createElement("h3")
+            const postCut = document.createElement("p")
+            const postLink = document.createElement("a")
+            const maxCharacter = 101
 
-            aItem.href = "post.html#" + data[i].id;
-            aItem.target = "_blank"
-            aItem.innerText = "Learn more ➜ "
+            postLink.href = "post.html#" + data[i].id;
+            postLink.target = "_blank"
 
-            divItem.className = "grid-item"
-            h3Item.className = "title"
+            postCard.className = "grid-item"
+            postTitle.className = "title"
 
-            h3Item.innerHTML = data[i].title
-            pItem.innerHTML = data[i].body.substring(1,101)
+            postTitle.innerHTML = data[i].title
+            postCut.innerHTML = data[i].body.substring(1,maxCharacter)
+            postLink.innerText = "Learn more ➜ "
 
-            divItem.appendChild(h3Item)
-            divItem.appendChild(pItem)
-            divItem.appendChild(aItem)
-            gridContainer.appendChild(divItem)
+            postCard.appendChild(postTitle)
+            postCard.appendChild(postCut)
+            postCard.appendChild(postLink)
+            postContainer.appendChild(postCard)
 
             location.hash = data[i].id
         }
     })
-    .catch(error => {
-        console.log("Error on rejected:", error)
+    .catch(error => { console.error("Error on rejected:", error)
     })

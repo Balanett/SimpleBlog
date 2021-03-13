@@ -11,14 +11,18 @@
 <form class="addComment-form">
     <h3 class="addComment-title">Add comment - Share your thoughts</h3>
     <label for="name">Name:</label>
-    <input type="text" id="name" name="name" placeholder="John Doe" required>
+    <input class="form-item" type="text" id="name" name="name" placeholder="John Doe" maxlength="6" required>
 
     <label for="email">Email:</label>
-    <input type="email" id="email" name="email" size="22" placeholder="john@doe.com" required> <br><br>
+    <input class="form-item" type="email" id="email" name="email" size="22" placeholder="john@doe.com" required> <br><br>
 
-    <textarea rows="4" cols="50" name="comment" required></textarea> <br><br>
-    <input type="submit" id="submit">
+    <label for="comment">Comment:</label> <br>
+    <textarea class="form-item" rows="4" cols="50" id="comment" name="comment" maxlength="30" required></textarea> <br><br>
+
+    <input type="submit" id="submit" disabled>
 </form>
+
+<p id="message" class="message"></p>
 
 <script src="js/post.js"></script>
 <script src="js/comments.js"></script>

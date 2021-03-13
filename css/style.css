@@ -1,3 +1,5 @@
+/* Main page and posts: */
+
 .header {
     background-image: url("Heart_Pink_Trans_1.png");
     background-repeat: no-repeat;
@@ -30,14 +32,23 @@
     margin: 50px;
 }
 
-.comment-section {
-    margin: 100px 50px 30px 50px;
+
+/* Show Comments: */
+
+.comment-mainTitle {
+    margin: 100px 50px 10px 50px;
     color: deeppink;
     text-decoration: underline;
 }
 
+.comment-section {
+    height: 100px;
+    overflow: auto;
+}
+
 .comment {
     margin: 10px 50px;
+    list-style: none;
 }
 
 .comment-author {
@@ -50,6 +61,9 @@
     margin: 0;
 }
 
+
+/* Add Comments: */
+
 .addComment-form {
     position: fixed;
     bottom: 20px;
@@ -59,4 +73,11 @@
 .addComment-title {
     color: deeppink;
     text-decoration: underline;
+}
+
+.message {
+    position: fixed;
+    bottom: 0px;
+    margin: 100px 50px 20px 50px;
+    color: red;
 }
